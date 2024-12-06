@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent">
+        <p>Coffee</p>
+        <p>Tea</p>
+    </div>
+
+    <div id="myDiv">This is a div element</div>
+
+    <ul id="myList">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+    <button id="removeItemBtn">Remove last Item</button>
+
+    <script>
+        // insert child before
+        const newitem = document.createElement('p');
+        newitem.textContent = 'New Items';
+        const parentDiv = document.getElementById('parent');
+        const referenceItem = parentDiv.firstElementChild;
+        parentDiv.insertBefore(newitem, referenceItem)
+
+        // replace element
+        const divElement = document.getElementById('myDiv');
+
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = 'this is a new paragraph';
+
+        divElement.parentNode.replaceChild(newParagraph, divElement)
+
+        // remove elements
+        const listElement = document.getElementById('myList');
+        const removeItemBtn = document.getElementById('removeItemBtn');
+
+        removeItemBtn.addEventListener('click', () => {
+            const lastItem = listElement.lastChild;
+            listElement.removeChild(lastItem);
+        });
+
+
+
+        
+
+
+    </script>
+</body>
+</html>
